@@ -1,8 +1,12 @@
 package com.sgs.minim2;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Book {
 
+    @SerializedName("author")
     private String author;
+    @SerializedName("title")
     private String title;
     private String image;
     private String _id;

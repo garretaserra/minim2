@@ -3,6 +3,7 @@ package com.sgs.minim2;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -16,9 +17,8 @@ public interface APII {
     @GET("/books")
     Call<List<Book>> getBooks();
 
-    @FormUrlEncoded
     @POST("/books")
-    Call<String> addBook(@Field("book") Book book);
+    Call<String> addBook(@Body Book book);
 
     @GET("/books/{id}")
     Call<BookDetail> getBook(@Path("id") String id);

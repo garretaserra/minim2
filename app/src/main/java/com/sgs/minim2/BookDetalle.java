@@ -3,8 +3,10 @@ package com.sgs.minim2;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,6 +14,8 @@ import android.widget.Toast;
 import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
+
+import java.lang.reflect.InvocationTargetException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -47,9 +51,14 @@ public class BookDetalle extends AppCompatActivity {
                         ListView lv = (ListView) findViewById(R.id.commentsList);
                         CommentAdapter ca = new CommentAdapter(getApplicationContext(), bd.getComments());
                         lv.setAdapter(ca);
+
                     }
                     catch (Exception e){
                         Toast.makeText(getApplicationContext(), "Missing arguments", Toast.LENGTH_LONG).show();
+                    }
+                    finally {
+                        ProgressBar pb = (ProgressBar)findViewById(R.id.progressBar2);
+                        pb.setVisibility(View.INVISIBLE);
                     }
                 }
                 else {

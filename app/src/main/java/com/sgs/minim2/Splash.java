@@ -30,4 +30,11 @@ public class Splash extends AppCompatActivity {
             }
         }; t.start();
     }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+    }
 }
