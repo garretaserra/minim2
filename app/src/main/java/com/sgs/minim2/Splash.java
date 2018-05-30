@@ -32,8 +32,9 @@ public class Splash extends AppCompatActivity {
     }
 
     @Override
-    public void onResume(){
-        super.onResume();
+    public void onRestart(){
+        super.onRestart();
+        //Necesari per prevenir que un usuari retorni a la activitat i no en pugui sortir
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }

@@ -25,7 +25,7 @@ public class AddBook extends AppCompatActivity {
         EditText title = (EditText)findViewById(R.id.title_txt);
         b.setTitle(title.getText().toString());
         EditText author = (EditText)findViewById(R.id.author_txt);
-        b.setAuthor(title.getText().toString());
+        b.setAuthor(author.getText().toString());
         API.getInstance().api.addBook(b).enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
