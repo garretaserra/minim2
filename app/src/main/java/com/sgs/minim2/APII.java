@@ -5,6 +5,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -15,8 +16,9 @@ public interface APII {
     @GET("/books")
     Call<List<Book>> getBooks();
 
+    @FormUrlEncoded
     @POST("/books")
-    Call<String> addBook(@Field("Book") Book book);
+    Call<String> addBook(@Field("book") Book book);
 
     @GET("/books/{id}")
     Call<BookDetail> getBook(@Path("id") String id);

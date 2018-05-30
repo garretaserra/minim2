@@ -23,4 +23,10 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, AddBook.class);
         startActivity(i);
     }
+
+    public void about(View view){
+        Intent i = new Intent(this, About.class);
+        startActivity(i);
+    }
+
 }

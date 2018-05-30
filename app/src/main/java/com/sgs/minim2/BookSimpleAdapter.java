@@ -24,11 +24,14 @@ public class BookSimpleAdapter extends ArrayAdapter<Book> {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.booksimple, parent, false);
         }
-        Picasso.with(super.getContext()).load(b.getImage()).into((ImageView) convertView.findViewById(R.id.image1));
-        TextView et = (TextView)convertView.findViewById(R.id.author_lbl);
-        et.setText(b.getAuthor());
-        TextView et2 = (TextView)convertView.findViewById(R.id.title_lbl);
-        et2.setText(b.getTitle());
+        try {
+            TextView et = (TextView) convertView.findViewById(R.id.author_lbl);
+            et.setText(b.getAuthor());
+            TextView et2 = (TextView) convertView.findViewById(R.id.title_lbl);
+            et2.setText(b.getTitle());
+            Picasso.with(super.getContext()).load(b.getImage()).into((ImageView) convertView.findViewById(R.id.image1));
+        }
+        catch (Exception e){}
         return convertView;
     }
 

@@ -57,7 +57,7 @@ public class BookDetail {
     }
 
     public String getImage() {
-        return image;
+        return "http://api.dsamola.tk/imagen.jpeg";
     }
 
     public void setImage(String image) {

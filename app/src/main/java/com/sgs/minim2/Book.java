@@ -23,8 +23,7 @@ public class Book {
         this.title = title;
     }
 
-    public String getImage() {
-        return image;
+    public String getImage() {return "http://api.dsamola.tk/imagen.jpeg";
     }
 
     public void setImage(String image) {

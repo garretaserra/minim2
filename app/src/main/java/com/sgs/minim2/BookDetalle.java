@@ -32,8 +32,9 @@ public class BookDetalle extends AppCompatActivity {
             @Override
             public void onResponse(Call<BookDetail> call, Response<BookDetail> response) {
                 if(response.isSuccessful()) {
-                    BookDetail bd = response.body();
                     try {
+                    BookDetail bd = response.body();
+
                         TextView author = (TextView) findViewById(R.id.author2);
                         author.setText(bd.getAuthor());
                         TextView title = (TextView) findViewById(R.id.title2);
@@ -41,7 +42,7 @@ public class BookDetalle extends AppCompatActivity {
                         TextView description = (TextView) findViewById(R.id.descripcion);
                         description.setText(bd.getDescription());
                         RatingBar rb = (RatingBar) findViewById(R.id.ratingBar);
-                        rb.setRating(rb.getRating());
+                        rb.setRating(bd.getRating());
                         Picasso.with(getApplicationContext()).load(bd.getImage()).into((ImageView) findViewById(R.id.imageView3));
                         ListView lv = (ListView) findViewById(R.id.commentsList);
                         CommentAdapter ca = new CommentAdapter(getApplicationContext(), bd.getComments());
